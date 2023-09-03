@@ -1,0 +1,130 @@
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <title>Huang Lab</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Rubik&display=swap" rel="stylesheet">
+
+    
+   
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+   
+    <link href="try.css" rel="stylesheet">
+
+  </head>
+<body>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+          
+        
+
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="academicprofile.html">Academic Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="research-highlights.html">Research Highlights</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="publications.html">Publications</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="team.html">Research Team</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="honors-and-awards.html">Honors &amp; Awards</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="alumni.html">Alumni</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="visitors.html">Visitors</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="albums.html">Albums</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+
+    <div class="ourteam">
+
+      <div :class="['container', isSelected ? 'container-selected':'', isReady ? 'container-ready':'']" id="app">
+        <div class="team-container">
+          <div class="header">
+            <h2 class="header-title">Our Team</h2>
+          </div>
+          <div class="person-list">
+            <div class="person" v-for="(person,index) in persons" @click="selectPerson(index,$event)"><img class="person-img" :src="person.photo">
+              <div class="person-details">
+                <h2 class="person-title">{{person.name}}</h2>
+                <p class="person-desc">{{person.title}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="team-detail">
+          <div class="team-detail-inner" v-if="isOk">
+            <div class="team-detail-left" :style=`background-image:url(${selectedPersonData.photo})`>
+              <div class="team-detail-photo"><img :src="selectedPersonData.photo" alt="">
+              </div>
+            </div>
+            <div class="team-detail-right">
+              <div class="team-detail-bio">
+                <div class="team-detail-header">
+                  <h2 class="person-title">{{selectedPersonData.name}}</h2>
+                  <p class="person-desc">{{selectedPersonData.title}}</p>
+                
+                </div>
+                <div class="team-detail-bio-content" v-html="selectedPersonData.bio">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.2.1/vue-resource.min.js"></script>
+      <script src="/trytry.js"></script>
+   
+      <script src="/custom.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  </div>
+  
+</body>
+</html>
